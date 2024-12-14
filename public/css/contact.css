@@ -1,0 +1,52 @@
+body {
+    min-height: 115vh;
+    display: flex;
+}
+
+.container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 50px;
+}
+
+.container1 form{
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+    background-color: rgba(253,240,235, 0.7);
+    padding-bottom: 25px;
+    padding-top: 20px;
+    padding-left: 63px;
+    padding-right: 63px;
+    border-radius: 20px;
+}
+
+.title{
+    font-size: 50px;
+    color: #7e5716;
+    font-variant: small-caps;
+    font-weight: 500;
+}
+
+.email{
+    max-width: 70%;
+    border-radius: 29px !important; 
+    margin-top:25px;
+    margin-bottom: 40px;
+    height: 60px;
+}
+
+.submit{
+    color: white;
+    background-color: #afa272;
+    border-radius: 30px;
+    font-weight: 500;
+    font-variant: small-caps;
+    font-size: 60px;
+    height: 70px;
+    padding: 0px 20px;
+    margin-top: 20px;
+    line-height: 1px;
+}

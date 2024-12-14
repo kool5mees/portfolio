@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav{
+    margin-left: 10%;
+    margin-right: 20%;
+    font-weight: 500;
+    padding-top: 60px;
+}
+
+body {
+    background-image: url("/resources/images/bg.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    font-variant: small-caps;
+    color: #7e5716;
+}
+
+.current-page{
+    text-decoration: underline;
+}

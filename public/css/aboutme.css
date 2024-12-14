@@ -1,0 +1,51 @@
+body {
+    min-height: 115vh;
+}
+
+.text{
+    width: 79%;
+    background-color: rgba(253,240,235, 0.7);
+    padding-left: 35px;
+    padding-right: 100px;
+    padding-bottom: 60px;
+    padding-top: 0px;
+    margin-left: 70px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.text h1{
+    font-size: 72px;
+}
+
+.text p {
+    font-size: 36px;
+    color: black;
+    font-weight: 500;
+    min-height: 600px;
+    min-width: 700px;
+}
+
+.container-left{
+    max-width: 58%;
+}
+
+.social-links{
+    margin-left: 77px;
+    max-width: fit-content;
+}
+
+.socials{
+    background-color: white;
+    margin-right: 29px;
+    padding: 13px 21px;
+    border-radius: 20px;
+    margin-top: 33px;
+}
+
+.headshot{ 
+    margin-top: 30px;
+    width: 625px;
+    border-radius: 80px;
+    height: 87% ;
+}

@@ -1,0 +1,10 @@
+body {
+    min-height: 115vh;
+}
+
+
+
+.name{
+    font-weight: 500;
+    padding-bottom: 150px;
+}
