@@ -19,11 +19,11 @@
             <div class="flex flex-col items-center text-white">
             </div>
             <div class="flex items-center flex-col text-orange-700">
-                
                 <form action="{{ route('aboutme.admin') }}" method="post" class="flex flex-col w-2/4">
                 @foreach($aboutme as $aboutme)
                     @csrf
                     <h1>titel</h1>
+                    <input type="hidden" name='posttype' value="update">
                     <input name="titel" value="{{$aboutme ->titel}}">
                     <h1>content</h1>
                     <textarea name="content" cols="125" rows="8" >{{$aboutme ->content}}</textarea>
@@ -45,6 +45,16 @@
                         <button type="submit" class="submit">submit</button>
                     </div>
                     @endforeach 
+                </form>
+                <form action="{{ route('aboutme.admin') }}" method="post" class="flex flex-col w-2/4">
+                    @csrf
+                    <h1>frameworks</h1>
+                    <input type="hidden" name='posttype' value="add">
+                    <input name="naam">
+                    <input name="logo">
+                    <div>
+                        <button type="submit" class="submit">submit</button>
+                    </div>
                 </form>
             </div>
         </div>

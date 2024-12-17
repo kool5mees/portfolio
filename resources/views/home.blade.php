@@ -23,7 +23,7 @@
             <div><a href="">login</a></div>
         </div>
         </div>
-        <div class="flex items-center justify-center text-5xl grow">
+        <div class="flex items-center justify-center text-5xl grow naam">
             <p class="mx-auto text-8xl name">MEES WINDHOUWER</p>
         </div>
     </body>

@@ -23,9 +23,9 @@ Route::get('/', function () {
 
 Route::get('/aboutme', [MainpageController::class, 'Mainpage']);
 
-Route::any('/dashboard/aboutme' , [AboutmeController::class, 'aboutmeadmin'])->name('aboutme.admin');
+Route::any('/dashboard/aboutme' , [AboutmeController::class, 'aboutmeadmin'])->middleware(['auth', 'verified'])->name('aboutme.admin');
 
-Route::get('/dashboard/contact' , [ContactController::class, 'contactadmin'])->name('contact.admin');
+Route::get('/dashboard/contact' , [ContactController::class, 'contactadmin'])->middleware(['auth', 'verified'])->name('contact.admin');
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact.create');
 

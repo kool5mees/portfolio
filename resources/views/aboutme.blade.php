@@ -42,5 +42,20 @@
             </div> 
         </div>
         @endif
+        @if($framework->isNotEmpty())
+            <div>
+                <div>
+                    languages/frameworks
+                </div>
+                <div>
+                    @foreach($framework as $code)
+                        <div>
+                            {{$code->naam}}
+                            <!-- {{$code->logo}} -->
+                        </div>
+                    @endforeach
+                </div>    
+            </div>
+        @endif
     </body>
 </html>

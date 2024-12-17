@@ -3,15 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aboutmecontent;
+use App\Models\Framework;
 use Illuminate\Http\Request;
 
 class AboutmeController extends Controller
 {
     public function aboutmeadmin(Request $request)
     {
-
+        //{{print($aboutme[0]['titel'])}}
         $aboutmeedit = Aboutmecontent::find(1);
-        if($request->isMethod('post')){
+        if($request->isMethod('post') && $request->posttype == 'update'){
         $aboutmeedit->titel = $request->titel;
         $aboutmeedit->content = $request->content;
         $aboutmeedit->img = $request->img;
@@ -23,6 +24,15 @@ class AboutmeController extends Controller
         $aboutmeedit->img3 = $request->img3;
         $aboutmeedit->save();
         };
+
+        if($request->isMethod('post') && $request->posttype == 'add'){
+            $framework = new Framework();
+            $framework->naam =$request->get('naam');
+            $framework->logo =$request->get('logo');
+            $framework->save();
+            };
+
+
 
         $aboutme = Aboutmecontent::all();
         return view("aboutmeadmin", ['aboutme' => $aboutme]);
