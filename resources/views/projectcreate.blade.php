@@ -17,7 +17,29 @@
     </div>
     <div class="flex flex-col">
         <div>
-
+            <form action="{{ route('projects.create') }}" method="post" class="flex flex-col">
+                @csrf
+                <h1>naam</h1>
+                <input name="naam" required>
+                <h1>beschrijving</h1>
+                <input name="beschrijving" required>
+                <h1>github</h1>
+                <input name="github">
+                <h1>site</h1>
+                <input name="site">
+                <h1>download</h1>
+                <input name="download">
+                <div>
+                    <h1>frameworks</h1>
+                    @foreach ($frameworks as $framework)
+                        <input type="checkbox" id="{{$framework->id}}" name="{{$framework->id}}" value="{{$framework->id}}">
+                        <label for="{{$framework->id}}">{{$framework->naam}}</label>
+                    @endforeach
+                </div>
+                <h1>thumbnail</h1>
+                <input name="thumbnail" required>
+                <button type="submit">create</button>
+            </form>
         </div>
     </div>
 </x-app-layout>

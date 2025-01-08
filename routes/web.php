@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard/projects', [ProjectdashController::class, 'project'])->middleware(['auth', 'verified'])->name('projects.admin');
-Route::get('/dashboard/projects/create', [ProjectcreateController::class, 'projectcreate'])->middleware(['auth', 'verified'])->name('projects.create');
+Route::any('/dashboard/projects/create', [ProjectcreateController::class, 'projectcreate'])->middleware(['auth', 'verified'])->name('projects.create');
 
 Route::get('/aboutme', [MainpageController::class, 'Mainpage']);
 

@@ -23,7 +23,7 @@
                 @foreach($aboutme as $aboutme)
                     @csrf
                     <h1>titel</h1>
-                    <input type="hidden" name='posttype' value="update">
+                    <input type="hidden" name='posttype' value="update" required>
                     <input name="titel" value="{{$aboutme ->titel}}">
                     <h1>content</h1>
                     <textarea name="content" cols="125" rows="8" >{{$aboutme ->content}}</textarea>
