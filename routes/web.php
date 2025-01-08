@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutmeController;
 use App\Http\Controllers\MainpageController;
+use App\Http\Controllers\ProjectdashController;
+use App\Http\Controllers\ProjectcreateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/dashboard/projects', [ProjectdashController::class, 'project'])->middleware(['auth', 'verified'])->name('projects.admin');
+Route::get('/dashboard/projects/create', [ProjectcreateController::class, 'projectcreate'])->middleware(['auth', 'verified'])->name('projects.create');
 
 Route::get('/aboutme', [MainpageController::class, 'Mainpage']);
 
