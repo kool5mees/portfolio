@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="/css/create.css">
 
 <x-app-layout>
     <x-slot name="header">
@@ -16,11 +16,11 @@
         </div>
     </div>
     <div class="flex flex-col">
-        <div>
+        <div class="form">
             <form action="{{ route('projects.create') }}" method="post" class="flex flex-col">
                 @csrf
                 <h1>naam</h1>
-                <input name="naam" required>
+                <input name="naam" required >
                 <h1>beschrijving</h1>
                 <input name="beschrijving" required>
                 <h1>github</h1>
@@ -32,7 +32,7 @@
                 <div>
                     <h1>frameworks</h1>
                     @foreach ($frameworks as $framework)
-                        <input type="checkbox" id="{{$framework->id}}" name="{{$framework->id}}" value="{{$framework->id}}">
+                        <input type="checkbox" id="{{$framework->id}}" name="$frameworks[]" value="{{$framework->id}}">
                         <label for="{{$framework->id}}">{{$framework->naam}}</label>
                     @endforeach
                 </div>
