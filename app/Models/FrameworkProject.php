@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class FrameworkProject extends Model
 {
+    protected $table = 'framework_project';
     public $timestamps = false;
 }

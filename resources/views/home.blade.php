@@ -18,7 +18,7 @@
         <div class="flex items-center justify-evenly text-5xl nav">
             <a href="{{ url('/') }}"><img src="logo.png"></img></a>
             <div><a href="{{ url('/aboutme') }}">about me</a></div>
-            <div><a href="">projects</a></div>
+            <div><a href="{{ url('/projects')}}">projects</a></div>
             <div><a href="{{ url('/contact') }}">contact</a></div>
             <div><a href="">login</a></div>
         </div>

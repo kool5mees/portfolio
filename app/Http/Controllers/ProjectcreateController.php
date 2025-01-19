@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FrameworkProject;
 use App\Models\Framework;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -26,9 +27,9 @@ class ProjectcreateController extends Controller
             $Project->thumbnail =$request->get('thumbnail');
             $Project->save();
 
-            if($Project->id){
-                $projectid= $Project->id;
-            }
+            foreach ($request->input('frameworks',[]) as $f){
+                $Project->frameworks()->attach($f);
+            };
             
 
         };
