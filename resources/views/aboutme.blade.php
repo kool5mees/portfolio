@@ -43,19 +43,27 @@
         </div>
         @endif
         @if($framework->isNotEmpty())
-            <div>
-                <div>
-                    languages/frameworks
+        <div>
+            <div class='list'>
+                <div class="frameworks">
+                    <div class="fheader">
+                        languages/frameworks
+                    </div>
+                    <div class="placeholder">
+                    </div>
                 </div>
-                <div>
-                    @foreach($framework as $code)
-                        <div>
-                            {{$code->naam}}
-                            <!-- {{$code->logo}} -->
-                        </div>
-                    @endforeach
-                </div>    
+                <div class="centering">
+                    <div class="itemcont">
+                        @foreach($framework as $code)
+                            <div class='listitem'>
+                                {{$code->naam}}
+                                <!-- {{$code->logo}} -->
+                            </div>
+                        @endforeach
+                    </div>    
+                </div>
             </div>
+        </div>
         @endif
     </body>
 </html>

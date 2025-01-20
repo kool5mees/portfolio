@@ -49,3 +49,57 @@ body {
     border-radius: 80px;
     height: 87% ;
 }
+
+.frameworks{
+    color: black; 
+    display: flex;
+    justify-content: center;
+}
+
+.fheader{
+    background-color: white;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: 900;
+    padding-left: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 0px 0px 10px 10px;
+    width: 55%;
+}
+
+.placeholder{
+    width: 45vw;
+    background: white;
+    height: 40px;
+}
+
+.list{
+    background-color:rgba(253, 240, 235, 0.7);
+    margin: 30px;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+.listitem{
+    color: black;
+    background-color: #f2d7aa;
+    width: 30vw;
+    margin-right: 17px;
+    margin-left: 17px;
+    border: black solid 1px;
+    margin-top:20px ;
+    height: 200px;
+}
+
+.itemcont{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    width: 99%;
+}
+
+.centering{
+    display: flex;
+    justify-content: center;
+}

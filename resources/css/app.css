@@ -15,6 +15,7 @@ body {
     background-position: bottom;
     font-variant: small-caps;
     color: #7e5716;
+    background-attachment: fixed;
 }
 
 .current-page{
