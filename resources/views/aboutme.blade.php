@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="css/aboutme.css">
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Mees Windhouwer</title>
         <link rel="" href="bg.png">
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

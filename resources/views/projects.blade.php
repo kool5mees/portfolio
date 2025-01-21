@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="stylesheet" href="css/home.css">
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <link rel="stylesheet" href="css/project.css">
+        <title>Mees Windhouwer</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -13,6 +13,8 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    
     </head>
     <body class="font-sans antialiased  flex flex-col">
         <div class="flex items-center justify-evenly text-5xl nav">
@@ -27,11 +29,28 @@
             <div>list of projects i have worked on</div>
         </div>
         <div>
-            <div>
+            <div class="menu">
                 <div>name</div>
                 <div>langauges/frameworks</div>
-                <div></div>
+                <form method="GET" action="{{ route('projects.list') }}">
+                <select name="framework_id" onchange="this.form.submit()">
+                    <option value="">-Filter-</option>
+                    @foreach ($frameworks as $framework)
+                        <option value="{{ $framework->id }}" 
+                            {{ isset($frameworkId) && $frameworkId == $framework->id ? 'selected' : '' }}>
+                            {{ $framework->naam }}
+                        </option>
+                    @endforeach    
+                </select>
+            </form>
             </div>
+        </div>
+        <div>
+            @foreach ($projects as $p)
+            <div>
+                <h3>{{ $p->naam }}</h3>
+            <div>
+            @endforeach
         </div>
     </body>
 </html>
