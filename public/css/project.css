@@ -1,3 +1,32 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.container2{
+    display: flex;
+}
+
+.header{
+    background-color: rgba(253, 240, 235, 0.7);
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-right: 400px;
+}
+
+.titel{
+    font-size: 60px;
+    font-weight: 800;
+}
+
+.para{
+    color: black;
+    font-size: 30px;
+    font-weight: 800;
+}
+
 .menu{
     display: flex;
+    background-color: white;
 }

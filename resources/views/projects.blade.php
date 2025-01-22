@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="stylesheet" href="css/project.css">
+        <link rel="stylesheet" href="/css/project.css">
         <title>Mees Windhouwer</title>
 
         <!-- Fonts -->
@@ -18,31 +18,35 @@
     </head>
     <body class="font-sans antialiased  flex flex-col">
         <div class="flex items-center justify-evenly text-5xl nav">
-            <a href="{{ url('/') }}"><img src="logo.png"></img></a>
+            <a href="{{ url('/') }}"><img src="{{asset('/logo.png')}}"></img></a>
             <div><a href="{{ url('/aboutme') }}">about me</a></div>
             <div><a href="{{ url('/projects')}}" class="current-page">projects</a></div>
             <div><a href="{{ url('/contact') }}">contact</a></div>
             <div><a href="">login</a></div>
         </div>
-        <div>
-            <div>projects</div>
-            <div>list of projects i have worked on</div>
+        <div class="container">
+            <div class="header">
+                <div class='titel'>projects</div>
+                <div class='para'>list of projects i have worked on</div>
+            </div>
         </div>
         <div>
-            <div class="menu">
-                <div>name</div>
-                <div>langauges/frameworks</div>
-                <form method="GET" action="{{ route('projects.list') }}">
-                <select name="framework_id" onchange="this.form.submit()">
-                    <option value="">-Filter-</option>
-                    @foreach ($frameworks as $framework)
-                        <option value="{{ $framework->id }}" 
-                            {{ isset($frameworkId) && $frameworkId == $framework->id ? 'selected' : '' }}>
-                            {{ $framework->naam }}
-                        </option>
-                    @endforeach    
-                </select>
-            </form>
+            <div class="container2">
+                <div class="menu">
+                    <div class="">name</div>
+                    <div>langauges/frameworks</div>
+                    <form method="GET" action="{{ route('projects.list') }}">
+                        <select name="framework_id" onchange="this.form.submit()">
+                            <option value="">-Filter-</option>
+                            @foreach ($frameworks as $framework)
+                                <option value="{{ $framework->id }}" 
+                                    {{ isset($frameworkId) && $frameworkId == $framework->id ? 'selected' : '' }}>
+                                    {{ $framework->naam }}
+                                </option>
+                            @endforeach    
+                        </select>
+                    </form>
+                </div>
             </div>
         </div>
         <div>

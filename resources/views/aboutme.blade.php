@@ -55,10 +55,12 @@
                 <div class="centering">
                     <div class="itemcont">
                         @foreach($framework as $code)
-                            <div class='listitem'>
-                                {{$code->naam}}
-                                <!-- {{$code->logo}} -->
-                            </div>
+                            <a href="{{ url('/projects/' . $code->id)}}">
+                                <div class='listitem'>
+                                    <div>{{$code->naam}}</div>
+                                    <!-- {{$code->logo}} -->
+                                </div>
+                            </a>
                         @endforeach
                     </div>    
                 </div>

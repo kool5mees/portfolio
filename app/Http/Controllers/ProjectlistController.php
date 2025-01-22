@@ -9,9 +9,13 @@ use App\Models\Project;
 
 class ProjectlistController extends Controller
 {
-    public function projects(Request $request){
+    public function projects(Request $request, $filt = null){
         $frameworks = Framework::all();
         $frameworkId = $request->input('framework_id');
+
+        if(isset($filt)){
+            $frameworkId = $filt;
+        };
         
         $filteredProjects = Project::when($frameworkId, function ($query) use ($frameworkId) {
             $query->whereHas('frameworks', function ($subQuery) use ($frameworkId) {
