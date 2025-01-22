@@ -29,6 +29,8 @@ Route::any('/dashboard/projects/create', [ProjectcreateController::class, 'proje
 
 Route::get('/projects/{filt?}', [ProjectlistController::class, 'projects'])->name('projects.list');
 
+Route::get('/project/{id}', [ProjectlistController::class, 'project'])->name('projects.item');
+
 Route::get('/aboutme', [MainpageController::class, 'Mainpage']);
 
 Route::any('/dashboard/aboutme' , [AboutmeController::class, 'aboutmeadmin'])->middleware(['auth', 'verified'])->name('aboutme.admin');

@@ -27,4 +27,15 @@ class ProjectlistController extends Controller
             'projects' => $filteredProjects,
             'frameworkId' => $frameworkId,]);
     }
+
+    public function project(Request $request, $id){
+        $project = Project::where('id', $id)->first();
+
+        $filteredFrameworks = Framework::when($id, function ($query) use ($id) {
+            $query->whereHas('projects', function ($subQuery) use ($id) {
+                $subQuery->where('project_id', $id);
+            });
+        })->get();
+        return view('project', ['project'=> $project, 'frameworks' => $filteredFrameworks]);
+    }
 }

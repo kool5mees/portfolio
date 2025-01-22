@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="stylesheet" href="/css/project.css">
+        <link rel="stylesheet" href="/css/projects.css">
         <title>Mees Windhouwer</title>
 
         <!-- Fonts -->
@@ -65,7 +65,7 @@
                                 <div class="itemimage">thumbnail image</div>
                             </div>
                             <div class="itemcont">
-                                <a class="itemlink">GO TO</a>
+                                <a class="itemlink" href="{{url('/project/' . $p->id)}}">GO TO</a>
                             </div>
                         </div>
                     @endforeach
