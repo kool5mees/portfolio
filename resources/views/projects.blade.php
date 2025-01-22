@@ -25,6 +25,7 @@
             <div><a href="">login</a></div>
         </div>
         <div class="container">
+            <div class="divider"></div>
             <div class="header">
                 <div class='titel'>projects</div>
                 <div class='para'>list of projects i have worked on</div>
@@ -32,11 +33,12 @@
         </div>
         <div>
             <div class="container2">
+                <div class="divider"></div>
                 <div class="menu">
-                    <div class="">name</div>
-                    <div>langauges/frameworks</div>
+                    <div class="lege menuname">name</div>
+                    <div class="lege menuframe">langauges/frameworks</div>
                     <form method="GET" action="{{ route('projects.list') }}">
-                        <select name="framework_id" onchange="this.form.submit()">
+                        <select name="framework_id" onchange="this.form.submit()" class="select">
                             <option value="">-Filter-</option>
                             @foreach ($frameworks as $framework)
                                 <option value="{{ $framework->id }}" 
@@ -48,13 +50,27 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <div>
-            @foreach ($projects as $p)
-            <div>
-                <h3>{{ $p->naam }}</h3>
-            <div>
-            @endforeach
+            <div class="container3">
+                <div class="divider"></div>
+                <div class="list">
+                    @foreach ($projects as $p)
+                        <div class="item">
+                            <div class="itemcont">
+                                <h3 class="itemname">{{ $p->naam }}</h3>
+                            </div>
+                            <div class="itemcont">
+                                <div class="itemframework">langauges and frameworks</div>
+                            </div>
+                            <div class="itemcont">
+                                <div class="itemimage">thumbnail image</div>
+                            </div>
+                            <div class="itemcont">
+                                <a class="itemlink">GO TO</a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </body>
 </html>
