@@ -58,7 +58,9 @@
                             <a href="{{ url('/projects/' . $code->id)}}">
                                 <div class='listitem'>
                                     <div>{{$code->naam}}</div>
-                                    <!-- {{$code->logo}} -->
+                                    @if($code->logo)
+                                    <img src="{{asset('storage/' . $code->logo)}}" class="flogo">
+                                    @endif
                                 </div>
                             </a>
                         @endforeach

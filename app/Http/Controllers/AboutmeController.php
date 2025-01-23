@@ -26,8 +26,8 @@ class AboutmeController extends Controller
 
         if($request->isMethod('post') && $request->posttype == 'add'){
             $request->validate([
-                'naam' => 'required|string|max:255',
-                'logo' => 'required|file|mimes:jpg,jpeg,png|max:2048',
+                'naam' => 'required',
+                'logo' => 'required|file|',
             ]);
             $framework = new Framework();
             $framework->naam =$request->get('naam');

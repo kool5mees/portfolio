@@ -108,3 +108,8 @@ body {
     overflow: scroll;
     overflow-x: hidden;
 }
+
+.flogo{
+    width: 100px;
+    height: 100px;
+}
