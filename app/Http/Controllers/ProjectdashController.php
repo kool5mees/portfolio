@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class ProjectdashController extends Controller
 {
     public function project(){
-        return view('projectsdash');
+
+        $projects = Project::all();
+        return view('projectsdash', ['projects' => $projects]);
     }
 }

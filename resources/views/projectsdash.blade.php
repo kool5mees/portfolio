@@ -21,5 +21,13 @@
                 {{ __('create') }}
             </x-nav-link>
         </div>
+        <div>
+            @foreach($projects as $p)
+                <div>
+                    <div>{{$p->naam}}</div>
+                    <a href="{{url('/dashboard/projects/' . $p->id)}}">Edit</a>
+                </div>
+            @endforeach
+        </div>
     </div>
 </x-app-layout>

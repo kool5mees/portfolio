@@ -34,9 +34,34 @@ class ProjectcreateController extends Controller
 
         };
 
-
-
         $frameworks = Framework::all();
         return view('projectcreate', ['frameworks' => $frameworks]);
+    }
+
+    public function projectedit(Request $request, $id){
+        if($request->isMethod('post')){
+        $project = Project::find($id);
+        $project->naam = $request->input('naam');
+        $project->beschrijving = $request->input('beschrijving');
+        $project->github = $request->input('github');
+        $project->site = $request->input('site');
+        $project->download = $request->input('download');
+        $project->thumbnail = $request->input('thumbnail');
+        $project->save();
+
+        if ($request->has('frameworks')) {
+            $project->frameworks()->sync($request->input('frameworks'));
+        } else {
+            $project->frameworks()->sync([]);
+        }}
+
+        $project = Project::where('id', $id)->first();
+        $filteredFrameworks = Framework::when($id, function ($query) use ($id) {
+            $query->whereHas('projects', function ($subQuery) use ($id) {
+                $subQuery->where('project_id', $id);
+            });
+        })->get();
+        $frameworks = Framework::all();
+        return view('projectedit',['project'=> $project, 'frameworksfilt' => $filteredFrameworks, 'frameworks' => $frameworks]);
     }
 }

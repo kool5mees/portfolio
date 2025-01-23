@@ -24,8 +24,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard/projects', [ProjectdashController::class, 'project'])->middleware(['auth', 'verified'])->name('projects.admin');
+Route::any('/dashboard/projects', [ProjectdashController::class, 'project'])->middleware(['auth', 'verified'])->name('projects.admin');
 Route::any('/dashboard/projects/create', [ProjectcreateController::class, 'projectcreate'])->middleware(['auth', 'verified'])->name('projects.create');
+Route::any('/dashboard/projects/{id}', [ProjectcreateController::class, 'projectedit'])->middleware(['auth', 'verified'])->name('projects.edit');
 
 Route::get('/projects/{filt?}', [ProjectlistController::class, 'projects'])->name('projects.list');
 
