@@ -36,6 +36,8 @@ class ProjectlistController extends Controller
                 $subQuery->where('project_id', $id);
             });
         })->get();
+
+        
         return view('project', ['project'=> $project, 'frameworks' => $filteredFrameworks]);
     }
 }

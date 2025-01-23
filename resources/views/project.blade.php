@@ -25,26 +25,27 @@
             <div><a href="">login</a></div>
         </div>
         <div>
-            <div>
-                <div>
-                    <div>{{$project->naam}}</div>
-                    <div>{{$project->beschrijving}}</div>
+            <div class="container1">
+                <div class="para">
+                    <div class="titel">{{$project->naam}}</div>
+                    <div class="text">{{$project->beschrijving}}</div>
                 </div>
-                <div>
-                    <div>
+                <div class="container2">
+                    <div class="links">
                         @if($project->github)
-                            <div>{{$project->github}}</div>
+                            <div class="github"><img src="{{asset('github.png')}}"><a href="{{$project->github}}">GITHUB</a></div>
                         @endif
                         @if($project->site)
-                            <div>{{$project->site}}</div>
+                            <div class="site"><img src="{{asset('logo.png')}}"><a href="{{$project->site}}">SITE</a></div>
                         @endif
                         @if($project->download)
-                            <div>{{$project->download}}</div>
+                            <div class="download"><img src="{{asset('images.png')}}"><a href="{{$project->download}}">DOWNLOAD</a></div>
                         @endif
                     </div>
-                    <div>
+                    <div class="frameworks">
+                        <div>langauges/frameworks</div>
                         @foreach($frameworks as $f)
-                        {{$f->naam}}
+                        <div>{{$f->naam}}</div>
                         @endforeach
                     </div>
                 </div>

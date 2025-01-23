@@ -1,0 +1,101 @@
+.container1{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.para{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(253, 240, 235, 0.7);
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    width: 40%;
+    height: 600px;
+}
+
+.titel{
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.text{
+    margin-top: 50px;
+    color: black;
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.container2{
+    width: 30%;
+}
+
+.links{
+    color: black;
+}
+
+.links a{
+    margin-left: 50px;
+}
+
+.github{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: fit-content;
+    padding: 20px 0px;
+    padding-left: 20px;
+    padding-right: 70px;
+    font-size: 60px;
+    border-radius: 40px;
+}
+
+.site{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: fit-content;
+    padding: 20px 0px;
+    padding-left: 20px;
+    padding-right: 70px;
+    font-size: 60px;
+    border-radius: 40px;
+    width: 457px;
+    height: 137px;
+
+    margin-top: 20px;
+}
+
+.download{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: fit-content;
+    padding: 20px 0px;
+    padding-left: 20px;
+    padding-right: 10px;
+    font-size: 50px;
+    border-radius: 40px;
+    width: 457px;
+    height: 137px;
+
+    margin-top: 20px;
+}
+
+.download img{
+    height: 70px;
+    width: 70px;
+}
+
+.frameworks{
+    margin-top: 20px;
+    color: black;
+    background-color: rgba(253, 240, 235, 0.7);
+    font-size: 36px;
+    font-weight: bold;
+}
