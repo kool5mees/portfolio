@@ -10,7 +10,6 @@ class AboutmeController extends Controller
 {
     public function aboutmeadmin(Request $request)
     {
-        //{{print($aboutme[0]['titel'])}}
         $aboutmeedit = Aboutmecontent::find(1);
         if($request->isMethod('post') && $request->posttype == 'update'){
         $aboutmeedit->titel = $request->titel;
@@ -26,9 +25,14 @@ class AboutmeController extends Controller
         };
 
         if($request->isMethod('post') && $request->posttype == 'add'){
+            $request->validate([
+                'naam' => 'required|string|max:255',
+                'logo' => 'required|file|mimes:jpg,jpeg,png|max:2048',
+            ]);
             $framework = new Framework();
             $framework->naam =$request->get('naam');
-            $framework->logo =$request->get('logo');
+            $path = $request->file('logo')->store('frameworkimages', ["disk"=>'public']);
+            $framework->logo = $path;
             $framework->save();
             };
 

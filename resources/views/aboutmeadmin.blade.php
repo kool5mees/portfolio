@@ -46,12 +46,12 @@
                     </div>
                     @endforeach 
                 </form>
-                <form action="{{ route('aboutme.admin') }}" method="post" class="flex flex-col w-2/4">
+                <form action="{{ route('aboutme.admin') }}" method="post" class="flex flex-col w-2/4" enctype="multipart/form-data">
                     @csrf
                     <h1>frameworks</h1>
                     <input type="hidden" name='posttype' value="add">
                     <input name="naam">
-                    <input name="logo">
+                    <input type="file" name="logo">
                     <div>
                         <button type="submit" class="submit">submit</button>
                     </div>

@@ -45,7 +45,7 @@
                     <div class="frameworks">
                         <div>langauges/frameworks</div>
                         @foreach($frameworks as $f)
-                        <div>{{$f->naam}}</div>
+                        <img src="{{asset($f->logo)}}"><div>{{$f->naam}}</div>
                         @endforeach
                     </div>
                 </div>
